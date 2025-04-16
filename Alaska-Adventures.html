@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alaska Adventure Generator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e4be84, #8f511bad);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px #444;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      flex: 1;
+      min-width: 300px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1.1em;
+      background-color: #9473068f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    #adventure {
+      margin-top: 25px;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .moose {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .moose:hover {
+      transform: scale(1.1);
+    }
+
+    #score {
+      font-size: 2em;
+      margin-top: 15px;
+      color: #704606;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.05);
+      width: 100%;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      background-color: #704606;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #8a5c08;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🧭 Alaska Adventure Fun Zone</h1>
+
+  <div class="container">
+    <!-- Adventure Generator -->
+    <div class="card">
+      <h2>🎒 Adventure Generator</h2>
+      <p>Click the button below to get your next epic Alaskan adventure!</p>
+      <button onclick="generateAdventure()">Give me an adventure!</button>
+      <div id="adventure"></div>
+    </div>
+
+    <!-- Moose Clicker Game -->
+    <div class="card">
+      <h2>🦌 Moose Clicker</h2>
+      <p>Click the moose as many times as you can!</p>
+      <img src="../startbootstrap-clean-blog-gh-pages/assets/img/moose1.jpg" 
+           alt="Moose" class="moose" onclick="incrementScore()" />
+      <div id="score">Score: 0</div>
+    </div>
+  </div>
+
+  <script>
+    // Alaska Adventures
+    const adventures = [
+      "Take a helicopter ride over Denali and see the summit up close.",
+      "Go dog sledding across snowy trails with a team of huskies.",
+      "Camp under the Northern Lights in the Alaskan wilderness.",
+      "Ride a snowmobile across a frozen tundra under a sky full of stars.",
+      "Join a whale-watching tour and spot humpbacks breaching the icy waters.",
+      "Explore an abandoned gold mining town tucked in the mountains.",
+      "Sleep in an igloo hotel and wake up to the sound of howling wolves.",
+      "Paddleboard between floating ice chunks in a glacier-fed lake.",
+      "Take a reindeer walk with a local herder and learn their names.",
+      "Photograph a bald eagle mid-flight over a crystal-clear river.",
+      "Go ice climbing on a vertical glacier wall with a professional guide.",
+      "Watch the sun *not* set during the summer solstice festival in Barrow.",
+      "Visit an Alaska Native art market and make your own scrimshaw carving.",
+      "Kayak through the icy waters of Kenai Fjords National Park.",
+      "Fish for salmon in a remote Alaskan river with a local guide.",
+      "Fly in a bush plane to a remote village only accessible by air.",
+      "Experience a midnight hike on a glacier-lit trail.",
+      "Take part in the Iditarod Winter Festival and meet real mushers.",
+      "Warm up in a natural hot spring surrounded by snow-covered pines.",
+      "Walk through a crystal ice cave beneath a massive glacier.",
+      "Listen to the eerie sound of calving glaciers echo through a fjord.",
+      "Try traditional Alaskan foods like smoked salmon and fry bread.",
+      "Snap a selfie at the Arctic Circle sign and watch for musk oxen."
+    ];
+
+    function generateAdventure() {
+      const randomIndex = Math.floor(Math.random() * adventures.length);
+      const adventure = adventures[randomIndex];
+      document.getElementById("adventure").textContent = "🌲 " + adventure;
+    }
+
+    // Moose Clicker Game
+    let score = 0;
+    function incrementScore() {
+      score++;
+      document.getElementById("score").textContent = `Score: ${score}`;
+    }
+  </script>
+
+  <footer>
+    <nav>
+      <a href="index.html">Back to Home</a>
+      <a href="Scratch.html">Back to Scratch</a>
+    </nav>
+  </footer>
+</body>
+</html>
