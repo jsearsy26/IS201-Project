@@ -16,9 +16,14 @@
   
   /* Navigation Bar */
   nav {
-    background-color: #ae701299;
-    padding: 10px 20px;
-    text-align: left;
+  background-color: #9c764c;
+  padding: 10px 20px;
+  text-align: left;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   }
   
   nav a {
@@ -35,9 +40,9 @@
     text-align: center;
     background-color: #ae701299;
     color: white;
-    padding: 40px 20px;
+    padding:100px 20px;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 80px 0 30px;
   }
   .header h1 {
     font-size: 3em;
@@ -98,7 +103,7 @@
     margin:20px 0;
   }
   .section1{
-    background-color: #ae701299;
+    background-color: #69420799;
     border: 1px solid #c78e3799;
     border-radius: 10px;
     padding: 20px;
